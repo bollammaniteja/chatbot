@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What is Python?",
+        "answer": "Python is a high-level programming language."
+    },
+    {
+        "question": "What is machine learning?",
+        "answer": "Machine learning is a branch of AI that enables systems to learn from data."
+    },
+    {
+        "question": "What is NLP?",
+        "answer": "NLP stands for Natural Language Processing."
+    },
+    {
+        "question": "What is cosine similarity?",
+        "answer": "Cosine similarity measures similarity between two text vectors."
+    },
+    {
+        "question": "What is TF-IDF?",
+        "answer": "TF-IDF converts text into numerical vectors based on word importance."
+    }
+]
