@@ -5,10 +5,33 @@
     <title>FAQ Chatbot</title>
 </head>
 <body>
+
     <h1>Welcome to My FAQ Chatbot</h1>
     <p>This chatbot answers student questions.</p>
 
-    <input type="text" placeholder="Ask a question">
-    <button>Send</button>
+    <input type="text" id="question" placeholder="Ask a question">
+    <button onclick="getAnswer()">Send</button>
+
+    <p id="answer"></p>
+
+    <script>
+        function getAnswer() {
+            let q = document.getElementById("question").value.toLowerCase();
+            let response = "";
+
+            if (q === "what is python") {
+                response = "Python is a programming language.";
+            }
+            else if (q === "what is html") {
+                response = "HTML is used to create web pages.";
+            }
+            else {
+                response = "Sorry, I don't know the answer.";
+            }
+
+            document.getElementById("answer").innerHTML = response;
+        }
+    </script>
+
 </body>
 </html>
