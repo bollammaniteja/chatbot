@@ -7,7 +7,6 @@
 <body>
 
     <h1>Welcome to My FAQ Chatbot</h1>
-    <p>This chatbot answers student questions.</p>
 
     <input type="text" id="question" placeholder="Ask a question">
     <button onclick="getAnswer()">Send</button>
@@ -15,21 +14,43 @@
     <p id="answer"></p>
 
     <script>
+        const faqData = [
+            {
+                question: "What is Python?",
+                answer: "Python is a high-level programming language."
+            },
+            {
+                question: "What is machine learning?",
+                answer: "Machine learning is a branch of AI that enables systems to learn from data."
+            },
+            {
+                question: "What is NLP?",
+                answer: "NLP stands for Natural Language Processing."
+            },
+            {
+                question: "What is cosine similarity?",
+                answer: "Cosine similarity measures similarity between two text vectors."
+            },
+            {
+                question: "What is TF-IDF?",
+                answer: "TF-IDF converts text into numerical vectors based on word importance."
+            }
+        ];
+
         function getAnswer() {
-            let q = document.getElementById("question").value.toLowerCase();
-            let response = "";
+            let userQuestion = document
+                .getElementById("question")
+                .value
+                .trim()
+                .toLowerCase()
+                .replace("?", "");
 
-            if (q === "what is python") {
-                response = "Python is a programming language.";
-            }
-            else if (q === "what is html") {
-                response = "HTML is used to create web pages.";
-            }
-            else {
-                response = "Sorry, I don't know the answer.";
-            }
+            let found = faqData.find(item =>
+                item.question.toLowerCase().replace("?", "") === userQuestion
+            );
 
-            document.getElementById("answer").innerHTML = response;
+            document.getElementById("answer").innerText =
+                found ? found.answer : "Sorry, I couldn't find an answer.";
         }
     </script>
 
